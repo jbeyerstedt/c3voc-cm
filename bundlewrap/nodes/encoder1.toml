@@ -14,6 +14,11 @@ gateway4 = "10.73.0.254"
 devicenumber = 1
 mode = "1080i50"
 
+[metadata.voctocore.sources.cam2]
+devicenumber = 4
+hdmi = true
+mode = "1080p30"
+
 [metadata.voctocore.sources.slides]
 devicenumber = 5
 mode = "1080p25"
@@ -21,3 +26,6 @@ mode = "1080p25"
 [metadata.voctocore.audio.original]
 streams = "0+1"
 input = "cam1"
+
+[metadata.event]
+room_name = "Betahaus"
