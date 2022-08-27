@@ -1,0 +1,6 @@
+subgroups = ["saal1"]
+
+[metadata.event]
+timezone = "Europe/Berlin"
+name = "CCCHH Tag des offenen Hackspace 2022"
+slug = "csh_tdoh"
