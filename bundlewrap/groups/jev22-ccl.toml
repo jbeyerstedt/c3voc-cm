@@ -1,0 +1,6 @@
+subgroups = ["saal3"]
+
+[metadata.event]
+timezone = "Europe/Berlin"
+name = "Curious Community Labs Chaos Experience"
+slug = "jev22"
