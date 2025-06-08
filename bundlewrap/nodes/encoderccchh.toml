@@ -46,18 +46,34 @@ parallel_slide_streaming = false
 # But hw also had some audio artifacts from time to time/ at mid to high audio levels.
 [metadata.voctocore.sources.audio]
 kind = "alsa"
-device = "hw:CARD=Hagibis,DEV=0"
+#device = "hw:CARD=Hagibis,DEV=0"
+#device = "hw:CARD=Hagibis_1,DEV=0"
+##device = "hw:CARD=C4K,DEV=0"
+device = "hw:CARD=M2,DEV=0"
+
+
+# Manual config:
+# Add to /etc/udev/rules.d/90-hdmigrabber.rules:
+# SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="345f" ,ATTRS{serial}=="09138462", MODE="0664", GROUP="video", SYMLINK+="hdmicapture/hagibis09138462"
+# SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="345f", ATTRS{serial}=="43201335", MODE="0664", GROUP="video", SYMLINK+="hdmicapture/hagibis43201335"
+# SUBSYSTEM=="video4linux", ATTR{index}=="0", ATTRS{idVendor}=="0fd9", ATTRS{serial}=="0004C4C3B6000", MODE="0664", GROUP="video", SYMLINK+="hdmicapture/camlink0004C4C3B6000"
 
 [metadata.voctocore.sources.cam1]
 kind = "v4l2"
-device = "/dev/video0"
+device = "/dev/hdmicapture/hagibis09138462"
 width = "1920"
 height = "1080"
 framerate = "30/1"
 format = "YUY2"
 
 [metadata.voctocore.sources.slides]
-kind = "test"
+kind = "v4l2"
+#device = "/dev/hdmicapture/camlink0004C4C3B6000"
+device = "/dev/hdmicapture/hagibis43201335"
+width = "1920"
+height = "1080"
+framerate = "30/1"
+format = "YUY2"
 
 [metadata.voctocore.audio.original]
 streams = "0+1"
